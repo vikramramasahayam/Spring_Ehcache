@@ -1,5 +1,7 @@
 package com.vik.repo.employee;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +18,17 @@ public class EmployeeRepoTest {
     public EmployeeRepo repo;
 
     @Test
-    public void testGetEmployee() {
+    public void testGetEmployee() throws InterruptedException {
         repo.getEmployee("hello1");
         repo.getEmployee("hello2");
         repo.getEmployee("hello2");
+        repo.getEmployee("hello3");
+        repo.getEmployee("hello4");
+        repo.getEmployee("hello5");
+        repo.getEmployee("hello6");
+        repo.getEmployee("hello7");
+        TimeUnit.SECONDS.sleep(300);
+        repo.getEmployee("hello1");
         repo.getEmployee("hello3");
         System.out.println(repo);
     }

@@ -7,11 +7,11 @@
   <diskStore path="java.io.tmpdir" />
   
     <cache name="studentCache"
-      maxEntriesLocalHeap="1000"
-      maxEntriesLocalDisk="100"
+      maxEntriesLocalHeap="3"
+      maxEntriesLocalDisk="2"
       eternal="false"
-      diskSpoolBufferSizeMB="20"
-      timeToIdleSeconds="300" timeToLiveSeconds="600"
+      diskSpoolBufferSizeMB="1"
+      timeToIdleSeconds="100" timeToLiveSeconds="200"
       memoryStoreEvictionPolicy="LFU"
       transactionalMode="off">
         <persistence strategy="localTempSwap"/>
