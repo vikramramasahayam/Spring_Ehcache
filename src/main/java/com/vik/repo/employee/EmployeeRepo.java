@@ -6,4 +6,6 @@ public interface EmployeeRepo {
 
     public Employee getEmployee(String name);
 
+    public int getCount();
+
 }

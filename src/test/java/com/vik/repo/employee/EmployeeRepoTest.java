@@ -2,6 +2,8 @@ package com.vik.repo.employee;
 
 import java.util.concurrent.TimeUnit;
 
+import org.hamcrest.Matchers;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +29,11 @@ public class EmployeeRepoTest {
         repo.getEmployee("hello5");
         repo.getEmployee("hello6");
         repo.getEmployee("hello7");
+        Assert.assertThat(repo.getCount(), Matchers.is(7));
         TimeUnit.SECONDS.sleep(300);
         repo.getEmployee("hello1");
         repo.getEmployee("hello3");
-        System.out.println(repo);
+        Assert.assertThat(repo.getCount(), Matchers.is(9));
     }
 
 }
